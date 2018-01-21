@@ -11,6 +11,7 @@ GPIO.setmode(GPIO.BCM)
 #set GPIO Pins
 TRIGGER = 23
 ECHO = 24
+THRESHOLD_DISTANCE = 20
 
 #set GPIO direction (IN / OUT)
 GPIO.setup(TRIGGER, GPIO.OUT)
@@ -46,7 +47,7 @@ try:
     while True:
         d = distance()
         print ("Measured Distance = %.1f cm" % d)
-	if d<20:
+	if d<THRESHOLD_DISTANCE:
 	    path ='/home/image'+"%.21s"%str(datetime.now())+'.jpg'
 	    camera.start_preview()
 	    #Give some time for the sensors to set its light levels
