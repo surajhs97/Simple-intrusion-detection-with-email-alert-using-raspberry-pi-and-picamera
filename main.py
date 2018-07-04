@@ -36,8 +36,6 @@ def distance():
 
     #Duration
     TimeElapsed = StopTime - StartTime
-
-
     distance = (TimeElapsed * 34300) / 2
 
     return distance
